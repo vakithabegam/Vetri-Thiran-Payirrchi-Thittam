@@ -1,0 +1,21 @@
+services:
+
+  pocketsmart:
+    build: .
+
+    container_name: pocketsmart-ai
+
+    ports:
+      - "8000:8000"
+
+    env_file:
+      - .env
+
+    volumes:
+      - pocketsmart_data:/app
+
+    restart: unless-stopped
+
+
+volumes:
+  pocketsmart_data:
